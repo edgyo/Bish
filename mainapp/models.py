@@ -9,7 +9,12 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    TYPE = (
+    TYPE_CHOICES = (
         ('Food', 'Food'),
         ('Drinks', 'Drinks'),
     )
+
+    type = models.CharField(choices=TYPE_CHOICES, max_length = 40)
+    
+    def __str__(self):
+        return("{} ({})".format(self.name, self.type))
