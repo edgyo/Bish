@@ -35,3 +35,8 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+.productimg {
+  height: 200px;
+  width: 200px;
+}

@@ -1,12 +1,13 @@
 from django.contrib import admin
 
-from .models import Product
+from .models import Product, Manufacturer
 
-
-# Register your models here.
+# Make product rows clear-looking in admin panel
 class ProductAdmin(admin.ModelAdmin):
-    fields = ("name", "type", "price") # Fields to use for add/edit/show page
-    list_display = ("name", "type", "price", "updated_at") # fields to display in search page
+    list_display = ("name", "type", "price", "manufacturer", "updated_at") # fields to display in search page
 
-# Register app
+# Register product
 admin.site.register(Product, ProductAdmin)
+
+# Register manufacturer
+admin.site.register(Manufacturer)

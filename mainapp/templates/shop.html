@@ -3,23 +3,28 @@
 
 {% block content %}
 <!-- <h1>{{ section.title }}</h1> -->
-
-<div class="container">
-    {% for product in product_list %}
-    <div class="row">
-        <div class="col-lg-3">
-            <h2>
-                {{ product.name|upper }}
-            </h2>
+<div class="container position-relative">
+    <h1 class="display-4 text-center">Заказ еды</h1>
+    <button type="button" class="btn btn-light translate-middle"><a class="nav-link" href="../home">Назад<span class="sr-only">(current)</span></a></button>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+        {% for product in product_list %}
+        <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
+            <img src="{{product.image.url}}" class="img-fluid mx-auto d-block" style="height: 200px; width: auto;" alt="Product image">
+            <div class="container">
+                <h3>
+                    {{ product.name|upper }}
+                </h3>
+                <div class="row">
+                    <div class="col-7">
+                        <p class="lead">{{product.type}} ({{product.manufacturer}})</p>
+                    </div>
+                    <div class="col">
+                        <p class="lead">{{product.price}}₽</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2">
-            {{product.price}}₽
-        </div>
-        <div class="col-xs-2">
-            {{product.type}}
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </div>
 {% endblock %}
