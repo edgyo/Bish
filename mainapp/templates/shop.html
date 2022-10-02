@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titleblock %}Shop{% endblock titleblock %}
+
+{% block content %}
+<!-- <h1>{{ section.title }}</h1> -->
+
+<div class="container">
+    {% for product in product_list %}
+    <div class="row">
+        <div class="col-lg-3">
+            <h2>
+                {{ product.name|upper }}
+            </h2>
+        </div>
+        <div class="col-md-2">
+            {{product.price}}
+        </div>
+        <div class="col-xs-2">
+            {{product.type}}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

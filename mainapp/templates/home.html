@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block titleblock %}Home{% endblock titleblock %}
-
 {% block content %}
-<!-- <h1>{{ section.title }}</h1> -->
+<!-- Begin page content -->
+<div class="container">
+    <div class="page-header">
+      <h1>Welcome to Bish</h1>
+    </div>
+    <p class="lead">Order anything you wish</p>
+  </div>
+{% endblock content %}
 
-{% for product in product_list %}
-<h2>
-    {{ product.name|upper }}
-</h2>
-{% endfor %}
-{% endblock %}
