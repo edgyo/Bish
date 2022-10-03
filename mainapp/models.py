@@ -10,8 +10,8 @@ class Manufacturer(models.Model):
         return(self.name)
 
 class ProductType(models.Model):
-    name = models.CharField(max_length = 60)
-    ru_name = models.CharField(max_length = 60)
+    name = models.CharField("Техническое название категории",max_length = 60)
+    ru_name = models.CharField("Название",max_length = 60)
     image = models.ImageField(upload_to ='uploads/')
 
     def __str__(self):

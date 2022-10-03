@@ -5,14 +5,20 @@
 <!-- <h1>{{ section.title }}</h1> -->
 <div class="container position-relative">
     <h1 class="display-4 text-center">Выбор категории</h1>
-    <button type="button" class="btn btn-light translate-middle"><a class="nav-link" href="../home">Назад</a></button>
+    <div class="col-md-12 text-right">
+        <a class="nav-link" href="../home">
+            <button type="button" class="btn btn-light translate-middle">
+                Назад
+            </button>
+        </a>
+    </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
         {% for type in types_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
             <img src="{{type.image.url}}" class="img-fluid mx-auto d-block" style="height: 200px; width: auto;" alt="type image">
             <div class="container col-md-12 text-center">
                 <a class="nav-link" href="shop/category={{type.id}}">
-                    <button type="button" class="btn btn-light center">
+                    <button type="button" class="btn btn-light">
                         <h3 class="text-center">
                             {{ type.ru_name|upper }}
                         </h3>
