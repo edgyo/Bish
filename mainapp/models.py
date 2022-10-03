@@ -24,7 +24,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
     image = models.ImageField(upload_to ='uploads/')
-    type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
+    type = models.ForeignKey(ProductType, on_delete=models.CASCADE, default="unassigned")
     
     def __str__(self):
         return("{} ({})".format(self.name, self.type))

@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% block titleblock %}Shop{% endblock titleblock %}
+{% block titleblock %}Browse{% endblock titleblock %}
 
 {% block content %}
 <!-- <h1>{{ section.title }}</h1> -->
 <div class="container position-relative">
     <h1 class="display-4 text-center">Заказ еды</h1>
-    <button type="button" class="btn btn-light translate-middle"><a class="nav-link" href="../home">Назад<span class="sr-only">(current)</span></a></button>
+    <button type="button" class="btn btn-light translate-middle"><a class="nav-link" href="../shop">Назад</a></button>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
         {% for product in product_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
@@ -16,7 +16,7 @@
                 </h3>
                 <div class="row">
                     <div class="col-7">
-                        <p class="lead">{{product.type}} ({{product.manufacturer}})</p>
+                        <p class="lead">{{product.manufacturer}}</p>
                     </div>
                     <div class="col">
                         <p class="lead">{{product.price}}₽</p>

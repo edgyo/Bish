@@ -11,20 +11,20 @@ def home(request):
 
 def shop(request):
     try:
-        product_list = ProductType.objects.all()
+        types_list = ProductType.objects.all()
         context = {
-        'product_list': product_list,
+        'types_list': types_list,
     }
     except OperationalError:
         return Http404("No items currently available")
     return render(request, "shop.html", context)
 
-def category(request, product_type):
+def category(request, id):
     try:
-        product_list = Product.objects.get_queryset().filter(type=product_type)
+        product_list = Product.objects.filter(type=id)
         context = {
         'product_list': product_list,
     }
     except OperationalError:
         return Http404("No items currently available")
-    return render(request, "shop.html", context)
+    return render(request, "category.html", context)

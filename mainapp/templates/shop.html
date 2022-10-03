@@ -7,14 +7,14 @@
     <h1 class="display-4 text-center">Выбор категории</h1>
     <button type="button" class="btn btn-light translate-middle"><a class="nav-link" href="../home">Назад</a></button>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-        {% for product_type in product_list %}
+        {% for type in types_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
-            <img src="{{product_type.image.url}}" class="img-fluid mx-auto d-block" style="height: 200px; width: auto;" alt="product_type image">
-            <div class="container">
-                <a class="nav-link" href="../category={{product_type.name}}">
+            <img src="{{type.image.url}}" class="img-fluid mx-auto d-block" style="height: 200px; width: auto;" alt="type image">
+            <div class="container col-md-12 text-center">
+                <a class="nav-link" href="shop/category={{type.id}}">
                     <button type="button" class="btn btn-light center">
                         <h3 class="text-center">
-                            {{ product_type.ru_name|upper }}
+                            {{ type.ru_name|upper }}
                         </h3>
                     </button>
                 </a>
