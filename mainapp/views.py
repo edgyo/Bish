@@ -22,9 +22,11 @@ def shop(request):
 def category(request, id):
     try:
         product_list = Product.objects.filter(type=id)
+        type = ProductType.objects.get(id=id)
         context = {
         'product_list': product_list,
-    }
+        'type':type,
+        }
     except OperationalError:
         return Http404("No items currently available")
     return render(request, "category.html", context)

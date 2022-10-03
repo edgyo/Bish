@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
-{% block titleblock %}Shop{% endblock titleblock %}
+{% block titleblock %}Bish | Выбор категории{% endblock titleblock %}
 
 {% block content %}
 <!-- <h1>{{ section.title }}</h1> -->
 <div class="container position-relative">
     <h1 class="display-4 text-center">Выбор категории</h1>
-    <div class="col-md-12 text-right">
-        <a class="nav-link" href="../home">
-            <button type="button" class="btn btn-light translate-middle">
-                Назад
-            </button>
-        </a>
-    </div>
+    <a class="link text-right" href="../home">
+        <button type="button" class="btn btn-light translate-middle">
+            Назад
+        </button>
+    </a>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
         {% for type in types_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">

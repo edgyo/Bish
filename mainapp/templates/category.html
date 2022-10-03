@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
-{% block titleblock %}Browse{% endblock titleblock %}
+{% block titleblock %}Bish | {{type.ru_name}}{% endblock titleblock %}
 
 {% block content %}
 <!-- <h1>{{ section.title }}</h1> -->
 <div class="container position-relative">
     <h1 class="display-4 text-center">Заказ еды</h1>
-    <div class="col-md-12 text-right">
-        <a class="nav-link" href="../shop">
+        <a class="link text-right" href="../shop">
             <button type="button" class="btn btn-light translate-middle">
                 Назад
             </button>
         </a>
-    </div>
+    {% if product_list %}
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
         {% for product in product_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
@@ -32,5 +31,8 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+        <h2 class="display-5 text-center">В настоящий момент товары в данной категории отстутствуют.</21>
+    {% endif %}
 </div>
 {% endblock %}
