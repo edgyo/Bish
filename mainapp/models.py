@@ -8,7 +8,15 @@ class Manufacturer(models.Model):
 
     def __str__(self):
         return(self.name)
-    
+
+class ProductType(models.Model):
+    name = models.CharField(max_length = 60)
+    ru_name = models.CharField(max_length = 60)
+    image = models.ImageField(upload_to ='uploads/')
+
+    def __str__(self):
+        return(self.name)
+
 class Product(models.Model):
     name = models.CharField(max_length = 120)
     price = models.FloatField(default=0.00)
@@ -16,18 +24,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
     image = models.ImageField(upload_to ='uploads/')
-
-    TYPE_CHOICES = (
-        ('Food', 'Food'),
-        ('Drinks', 'Drinks'),
-        ('Готовая еда', 'Готовая еда'),
-        ('Фрукты', 'Фрукты'),
-        ('Овощи', 'Овощи'),
-        ('Напитки', 'Напитки'),
-        ('Кофе', 'Кофе'),
-    )
-
-    type = models.CharField(choices=TYPE_CHOICES, max_length = 40)
+    type = models.ForeignKey(ProductType, on_delete=models.CASCADE)
     
     def __str__(self):
         return("{} ({})".format(self.name, self.type))
