@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block headblock %}{% endblock headblock %}
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <nav class="navbar justify-content-center navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+      <nav class="navbar justify-content-center navbar-expand-sm navbar-light" style="background-color: #FFC100;">
         <a class="navbar-brand" href="../home"><img src="../uploads/tag.png" style="height:40px;width:auto;"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +32,7 @@
           +7 (999) 123-45-67
         </span>
       </nav>
-
+    </div>
     <!-- Begin page content -->
       {% block content %}
       {% endblock content %}

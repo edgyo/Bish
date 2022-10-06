@@ -11,6 +11,7 @@
         </button>
     </a>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+        {% if types_list %}
         {% for type in types_list %}
         <div class="col-sm-12 pb-4" style="height: auto; width: auto;">
             <img src="{{type.image.url}}" class="img-fluid mx-auto d-block" style="height: 200px; width: auto;" alt="type image">
@@ -25,6 +26,9 @@
             </div>
         </div>
         {% endfor %}
+        {% else %}
+            <h2 class="display-5 text-center">В настоящий момент доступные категории отстутствуют.</21>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
